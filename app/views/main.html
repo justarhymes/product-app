@@ -1,0 +1,17 @@
+<div class="controller" ng-controller="ProductController as shop">
+  <div class="row">
+    <h2>Products</h2>
+  </div>
+  <div class="products row">
+    <div class="col-sm-4 col-xs-6" ng-repeat="product in shop.products">
+      <section class="panel">
+        <h3>{{product.name}}</h3>
+        <div ng-controller="ImagesController as image"  ng-show="product.images.length">
+          <div class="img-wrap">
+            <img ng-src="{{product.images[image.default]}}" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
