@@ -4,12 +4,11 @@
  * @ngdoc function
  * @name ProductApp.controller:MainCtrl
  * @description
- * # MainCtrl
+ * # ProductController
  * Controller of the ProductApp
 */
-var app = angular.module('productApp');
 
-app.controller('ProductController', function() {
+angular.module('productApp').controller('ProductController', function() {
   this.products = [{
     id: 1,
     name: 'Magnificent Compton',
@@ -171,7 +170,7 @@ app.controller('ProductController', function() {
   }];
 });
 
-app.controller('ImagesController', function(){
+angular.module('productApp').controller('ImagesController', function(){
   this.default = 0;
 
   this.setDefault = function(number){
