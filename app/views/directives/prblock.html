@@ -1,0 +1,10 @@
+<div class="col-sm-4 col-xs-6">
+  <section class="panel">
+    <h3>{{name}}</h3>
+    <div ng-controller="ImagesController as image"  ng-show="images.length">
+      <div class="img-wrap">
+        <img ng-src="{{images[image.default]}}" />
+      </div>
+    </div>
+  </section>
+</div>
