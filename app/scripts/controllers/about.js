@@ -7,5 +7,5 @@
  * # AboutCtrl
  * Controller of the ProductApp
 */
-angular.module('productApp').controller('AboutCtrl', function () {
+angular.module('ProductApp').controller('AboutCtrl', function () {
 });

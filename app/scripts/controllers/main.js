@@ -2,14 +2,15 @@
 
 /**
  * @ngdoc function
- * @name ProductApp.controller:MainCtrl
+ * @name ProductApp.controller:ProductController
  * @description
- * # ProductController
+ * # productController
  * Controller of the ProductApp
 */
 
-angular.module('productApp').controller('ProductController', function() {
-  this.products = [{
+angular.module('ProductApp').controller('ProductController', function($scope, Product) {
+  $scope.store = Product.query();
+  /*this.products = [{
     id: 1,
     name: 'Magnificent Compton',
     about: 'Duis id quam pulvinar, vulputate metus at, posuere est. Morbi vel faucibus diam, pulvinar sodales libero. Nullam a urna at eros tempus vehicula. Mauris dictum accumsan lorem vitae commodo.',
@@ -167,13 +168,13 @@ angular.module('productApp').controller('ProductController', function() {
       'Person 18',
       'Person 19',
     ]
-  }];
+  }];*/
 });
 
-angular.module('productApp').controller('ImagesController', function(){
+/*angular.module('ProductApp').controller('ImagesController', function(){
   this.default = 0;
 
   this.setDefault = function(number){
     this.default = number || 0;
   };
-});
+});*/

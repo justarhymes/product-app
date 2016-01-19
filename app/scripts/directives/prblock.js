@@ -12,12 +12,23 @@ angular.module('ProductApp')
       replace: true,
       restrict: 'E',
       scope: {
-        header: '=',
-        body: '=',
+        name: '=',
+        about: '=',
         image: '=',
+        rating: '=',
+        price: '=',
+        release: '=',
+        cast: '=',
         id: '=',
         type: '@'
       },
-      templateUrl: 'views/directives/prblock.html'
+      templateUrl: 'views/directives/prblock.html',
+      controller: function() {
+        this.current = 0;
+        this.setCurrent = function(imageNumber){
+          this.current = imageNumber || 0;
+        };
+      },
+      controllerAs: 'gallery'
     };
   });
