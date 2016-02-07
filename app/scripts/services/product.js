@@ -8,16 +8,13 @@
  * Factory in the productApp.
  */
 angular.module('productApp')
-  .factory('Product', function () {
-    // Service logic
-    // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
+  .factory('Product', function ProductFactory($http) {
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      all: function() {
+        return $http({method: 'GET', url: '/scripts/api/products.json'});
+      },
+      find: function(id){
+        return $http({method:'GET', url: '/scripts/api/products-' + id + '.json'});
       }
     };
   });

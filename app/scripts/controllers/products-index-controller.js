@@ -9,12 +9,16 @@
  */
 
 angular.module('productApp')
-  .controller('ProductsIndexController', function ($http) {
-    var store = this;
+  .controller('ProductsIndexController', function ($scope, Product) {
+    //var store = this;
 
-    store.products = [];
+    //$scope.products = [];
 
-    $http.get('/scripts/api/products.json').success(function(data) {
-      store.products = data;
+    Product.all().success(function(data) {
+      $scope.products = data;
     });
+
+    /*$http.get('/scripts/api/products.json').success(function(data) {
+      $scope.products = data;
+    });*/
   });

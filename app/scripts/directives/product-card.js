@@ -11,15 +11,14 @@ angular.module('productApp')
     return {
       //replace: true,
       restrict: 'E',
-      /*scope: {
+      scope: {
+        pid: '=',
         name: '=',
-        about: '=',
-        image: '=',
         rating: '=',
         price: '=',
-        id: '=',
-        type: '@'
-      },*/
+        release: '=',
+        images: '=',
+      },
       templateUrl: 'views/product-card.html',
     };
   });

@@ -25,7 +25,7 @@ angular
         controller: 'ProductsIndexController'
       })
 
-      .when('/notes/:id', {
+      .when('/products/:id', {
         templateUrl: 'views/products-show.html',
         controller: 'ProductsShowController'
       })
@@ -33,7 +33,6 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
       })
 
       .otherwise({

@@ -1,1 +1,32 @@
-<p>This is the products-show view.</p>
+<div class="overview">
+  <div class="row">
+      <div class="col-sm-12">
+        <section class="block row">
+          <div class="col-sm-6 col-md-5 col-lg-4">
+            <a ng-href="#/products/"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+            <img ng-src="{{product[0].images[0]}}" alt="poster">
+            <ul class="list-group meta">
+              <li class="light-group-item rating"><strong>Rated:</strong> {{product[0].rating}}</li>
+              <li class="light-group-item release"><strong>Release:</strong> {{product[0].release | date:'MM/dd/yyyy'}}</li>
+              <li class="light-group-item price"><strong>Price:</strong> {{product[0].price | currency}}</li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-7 col-lg-8">
+            <h1>{{product[0].name}}</h1>
+            <section class="about">
+              <h3>Synopsis</h3>
+              <p>{{product[0].about}}</p>
+            </section>
+            <section class="cast">
+              <h3>Cast</h3>
+              <ul>
+                <li ng-repeat="cast in product[0].cast">
+                  {{cast}}
+                </li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </div>
+  </div>
+</div>

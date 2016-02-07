@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "definitions";
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -12,9 +14,53 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  @extend %font;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  text-transform: uppercase;
 }
 
 .panel {
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      position: absolute;
+      line-height: 1;
+      color: #fff;
+      font-weight: 400;
+      @include opacity(0);
+      @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55));
+
+      &.price, &.release {
+        bottom: 1rem;
+        @include transform(translate3d(0, -20px, 0));
+      }
+
+      &.rating, &.price {
+        right: 1rem;
+      }
+
+      &.rating {
+        top: 1rem;
+        @include transform(translate3d(0, 20px, 0));
+      }
+
+      &.release {
+        left: 1rem;
+      }
+    }
+  }
   h3 {
     font-size: 1.5rem;
   }
@@ -22,6 +68,68 @@ body {
     display: block;
     width: 100%;
     height: auto;
+  }
+  a {
+    position: relative;
+    display: block;
+    @include transition(all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55));
+    &:hover {
+      @include scale(1.05);
+
+      ul li {
+        &.rating,
+        &.release,
+        &.price {
+          @include opacity(1);
+          @include transform(translate3d(0, 0, 0));
+        }
+      }
+    }
+  }
+}
+
+.block {
+  a {
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+    color: $caribbeanGreen;
+    text-transform: uppercase;
+    font-weight: 600;
+    @include transition(color 200ms ease);
+
+    &:hover {
+      color: darken($caribbeanGreen, 10%);
+    }
+  }
+  h1 {
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #666;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cast ul {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+
+    li {
+      width: 50%;
+      &:nth-child(2n+1) {
+        padding-right: 20px;
+      }
+    }
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px;
   }
 }
 
@@ -45,10 +153,16 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
+
+  .navbar {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 /* Custom page footer */
 .footer {
+  margin-top: 30px;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
