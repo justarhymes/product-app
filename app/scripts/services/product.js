@@ -2,19 +2,19 @@
 
 /**
  * @ngdoc service
- * @name ProductApp.product
+ * @name productApp.Product
  * @description
- * # product
- * Factory in the ProductApp.
+ * # Product
+ * Factory in the productApp.
  */
-angular.module('ProductApp').factory('Product', function ($http) {
-  return {
-    all: function() {
-      var store = this;
-      //return $http({method: 'GET', url: '/products'});
-      $http.get('./scripts/api/products.json').success(function(data){
-        store.products = data;
-    });
-    },
-  };
-});
+angular.module('productApp')
+  .factory('Product', function ProductFactory($http) {
+    return {
+      all: function() {
+        return $http({method: 'GET', url: '/scripts/api/products.json'});
+      },
+      find: function(id){
+        return $http({method:'GET', url: '/scripts/api/products-' + id + '.json'});
+      }
+    };
+  });

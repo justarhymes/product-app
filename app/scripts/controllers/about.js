@@ -2,10 +2,11 @@
 
 /**
  * @ngdoc function
- * @name ProductApp.controller:AboutCtrl
+ * @name productApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the ProductApp
-*/
-angular.module('ProductApp').controller('AboutCtrl', function () {
-});
+ * Controller of the productApp
+ */
+angular.module('productApp')
+  .controller('AboutCtrl', function () {
+  });

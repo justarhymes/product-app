@@ -1,0 +1,13 @@
+<section class="panel">
+  <h3>{{name}}</h3>
+  <a ng-href="#/products/{{pid}}">
+    <div class="img-wrap">
+      <img ng-src="{{images[0]}}" alt="poster">
+      <ul class="meta">
+        <li class="rating">{{rating}}</li>
+        <li class="release">{{release | date:'MM/dd/yyyy'}}</li>
+        <li class="price">{{price | currency}}</li>
+      </ul>
+    </div>
+  </a>
+</section>

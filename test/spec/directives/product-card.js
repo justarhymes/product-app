@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Directive: prBlock', function () {
+describe('Directive: productCard', function () {
 
   // load the directive's module
-  beforeEach(module('ProductApp'));
+  beforeEach(module('productApp'));
 
   var element,
     scope;
@@ -13,8 +13,8 @@ describe('Directive: prBlock', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<pr-block></pr-block>');
+    element = angular.element('<product-card></product-card>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the prBlock directive');
+    expect(element.text()).toBe('this is the productCard directive');
   }));
 });
