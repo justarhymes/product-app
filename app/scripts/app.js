@@ -13,7 +13,7 @@ angular
     'ngResource',
     'ngRoute'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         // redirect to the notes index
@@ -38,4 +38,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
   });
