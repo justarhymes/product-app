@@ -1,1 +1,5 @@
-<p>This is the products-index view.</p>
+<div class="overview" ng-controller="ProductsIndexController as itemList">
+  <div class="row">
+    <product-card ng-repeat="product in itemList.products"></product-card>
+  </div>
+</div>

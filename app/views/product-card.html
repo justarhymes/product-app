@@ -1,1 +1,15 @@
-<p>This is the product-card view.</p>
+<div class="col-sm-4 col-xs-6">
+  <section class="panel">
+    <h3>{{product.name}}</h3>
+    <a href="#" ng-show="product.images.length">
+      <div class="img-wrap">
+        <img ng-src="{{product.images[0]}}" alt="poster">
+        <ul class="meta">
+          <li class="rating">{{product.rating}}</li>
+          <li class="release">{{product.release}}</li>
+          <li class="price">{{product.price}}</li>
+        </ul>
+      </div>
+    </a>
+  </section>
+</div>

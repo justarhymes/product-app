@@ -9,9 +9,4 @@
  */
 angular.module('productApp')
   .controller('ProductsShowController', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
   });

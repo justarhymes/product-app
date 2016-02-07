@@ -9,9 +9,9 @@
 angular.module('productApp')
   .directive('productCard', function () {
     return {
-      replace: true,
+      //replace: true,
       restrict: 'E',
-      scope: {
+      /*scope: {
         name: '=',
         about: '=',
         image: '=',
@@ -19,7 +19,7 @@ angular.module('productApp')
         price: '=',
         id: '=',
         type: '@'
-      },
-      templateUrl: 'templates/directives/nproduct-card.html'
+      },*/
+      templateUrl: 'views/product-card.html',
     };
   });
